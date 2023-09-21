@@ -1,5 +1,124 @@
 <style>
-  #up {
+  .no-support {
+  text-align: center;
+  padding: 5px;
+  width: 450px;
+  margin-left: auto;
+  margin-right: auto;
+  background: #ee6620;
+  color: #fff;
+  font-size: 16px;
+}
+
+@supports(scroll-snap-type: both mandatory) {
+  .no-support {
+    display: none;
+  }
+}
+
+.example-wrapper {
+  text-align: center;
+  width: 360px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.container {
+  width: 100%;
+  height: 94%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 10px;
+  border: 2px solid #333;
+  overflow: auto ;
+  position: relative;
+}
+
+.element {
+  border: 8px solid gray;
+  border-radius: 64px;
+  width: 600px;
+  height: 700px;
+  scroll-snap-align: start;
+  scroll-snap-stop: normal;
+  color: white;
+  font-size: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: top;
+  background: #696969;
+}
+
+
+.both-mandatory {
+  scroll-snap-type: both mandatory;
+}
+
+.scroll-wrapper {
+  position: relative;
+}
+
+.scroll-padding-top,
+.scroll-padding-left {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 360px;
+  background: pink;
+  opacity: 0.5;
+  display: block;
+  z-index: 2;
+}
+
+.scroll-padding-top {
+  top: 2px;
+}
+
+.both-scroll .wrapper {
+  width: 720px;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 650px 700px;
+  grid-gap: 50px;
+  padding: 100px 100px 400px 100px; /* To give more space to scroll */
+}
+
+.padding-0px {
+  scroll-padding: 0px 0px 0px 0px;
+}
+
+.padding-50px {
+  scroll-padding: 50px 0px 0px 50px;
+}
+
+.padding-100px {
+  scroll-padding: 100px 0px 0px 100px;
+}
+
+.scroll-wrapper-50px .scroll-padding-top,
+.scroll-wrapper-50px .scroll-padding-left {
+  height: 50px;
+  line-height: 50px;
+}
+
+.scroll-wrapper-50px .scroll-padding-left {
+  transform: rotate(-90deg);
+  left: calc(-1 * 360px / 2 + 50px / 2 + 2px);
+  top: calc(360px / 2 - 50px / 2 + 2px);
+}
+
+.scroll-wrapper-100px .scroll-padding-top,
+.scroll-wrapper-100px .scroll-padding-left {
+  height: 100px;
+  line-height: 100px;
+}
+
+.scroll-wrapper-100px .scroll-padding-left {
+  transform: rotate(-90deg);
+  left: calc(-1 * 360px / 2 + 100px / 2 + 2px);
+  top: calc(360px / 2 - 100px / 2 + 2px);
+}
+#up {
     color: white;
     background: red;
     width: 100%;
@@ -16,11 +135,45 @@
     border-bottom-color: red;
   }
   .scroll-container {
-    scroll-padding: 50px 0 0 50px;
+    scroll-padding: 20px 0 0 20px;
+  }
+
+  .text {
+    top:386;
+    right: 60px;
+    white-space: pre-wrap;
+    padding: 12;
+    width:500px;
+    height: 700px;
+    display: flex;
+    position: relative;
+    justify-content: left;
+    item-align: center;
+    font-size: 18px;
+  }
+  .title {
+    top: 35px;
+    left: 250px;
+    position:absolute;
+    justify-content: center;
+    font-size: 64px;
+  }
+  .imageHolder {
+
+    border: 8px solid gray;
+    border-radius:16px;
+    display: flex;
+    bottom: 65px;
+    right: 90px;
+    position: relative;
+    height: 350px;
+    width: 450px;
+
   }
 </style>
 
 <html>
+  
   <head>
     <title>Foko's</title>
   </head>
@@ -28,8 +181,40 @@
     <div id="up" class="up">
       <STRONG>Welcome!</STRONG>
     </div>
-    <div class="scroll-container">
-      <p>hello</p>
+    <div class="container both-scroll both-mandatory padding-50px">
+      <div class="wrapper">
+        <div class="element">
+	<div class="title">
+	<Strong><p>Welcome!</p></Strong>
+	<img class = "imageHolder" src="images/hello.gif"></img>
+	</div>
+	<div class="text">
+
+
+	Hello There!
+	</div>
+	
+         </div>
+        <div class="element">2</div>
+        <div class="element">3</div>
+        <div class="element">4</div>
+      </div>
     </div>
   </body>
 </html>
+
+<script>
+
+function readJson(jsonDir) {
+  fetch(jsonDir)
+    .then((response) => response.json())
+    .then((json) => {
+      const title = json["title"];
+      console.log(title)
+      
+    });
+
+}
+
+readJson("public/hello.json");
+</script>
