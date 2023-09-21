@@ -209,12 +209,8 @@
 		const titlePar = document.createElement("STRONG");
 		const titleP = document.createElement("p");
 
-		const Greg = document.createElement("a");
-		Greg.href=link;
-		Greg.textContent="there";
 		titleP.textContent=title;
 		titlePar.appendChild(titleP);
-		titlePar.appendChild(Greg);
 		titleElement.appendChild(titlePar);
 
 		Element.appendChild(titleElement);
@@ -227,8 +223,12 @@
 		
 		const textElement = document.createElement("div");
 		textElement.classList.add("text");
-		
+
+	        const Greg = document.createElement("a");
+		Greg.href=link;
+		Greg.textContent="there";
 		textElement.textContent=text;
+		textElement.appendChild(Greg);
 		Element.appendChild(textElement);
 
 		bod.appendChild(Element);
