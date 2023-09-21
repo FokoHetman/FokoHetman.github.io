@@ -161,6 +161,22 @@
     item-align: center;
     font-size: 18px;
   }
+
+  .link {
+    top:415px;
+    right: 420px;
+    white-space: pre-wrap;
+    padding: 12; 
+    min-width: 250px;
+    height: 700px; 
+    display: inline-block;
+    position: relative;
+    justify-content: left;
+    item-align: center;
+    font-size: 18px;
+  }
+
+	
   .title {
     bottom: 55px;
     left: 325px;
@@ -168,6 +184,7 @@
     justify-content: center;
     font-size: 64px;
   }
+
   .imageHolder {
 
     top: 90px;
@@ -233,13 +250,13 @@
 	        const Greg = document.createElement("a");
 		Greg.href=link;
 		Greg.textContent="there";
-		
+		linkElement.classList.add("link");
 		textElement.textContent=text;
 		Element.appendChild(textElement);
 
 		linkElement.appendChild(Greg);
 
-		//Element.appendChild(linkElement);
+		Element.appendChild(linkElement);
 
 		bod.appendChild(Element);
 
