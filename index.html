@@ -227,12 +227,18 @@
 		const textElement = document.createElement("div");
 		textElement.classList.add("text");
 
+		const linkElement=document.createElement("div");
+		
 	        const Greg = document.createElement("a");
 		Greg.href=link;
 		Greg.textContent="there";
+		
 		textElement.textContent=text;
-		textElement.appendChild(Greg);
 		Element.appendChild(textElement);
+
+		linkElement.appendChild(Greg);
+
+		Element.appendChild(linkElement);
 
 		bod.appendChild(Element);
 
