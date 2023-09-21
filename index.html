@@ -182,17 +182,17 @@
       <STRONG>Welcome!</STRONG>
     </div>
     <div class="container both-scroll both-mandatory padding-50px">
-      <div class="wrapper">
+      <div class="wrapper" id="bod">
         <div class="element">
-	<div class="title">
-	<Strong><p>Welcome!</p></Strong>
-	<img class = "imageHolder" src="images/hello.gif"></img>
-	</div>
-	<div class="text">
+					<div class="title">
+					<Strong><p>Welcome!</p></Strong>
+					<img class = "imageHolder" src="images/hello.gif"></img>
+					</div>
+						<div class="text">
 
 
-	Hello There!
-	</div>
+						Hello There!
+						</div>
 	
          </div>
         <div class="element">2</div>
@@ -205,16 +205,59 @@
 
 <script>
 
-function readJson(jsonDir) {
-  fetch(jsonDir)
-    .then((response) => response.json())
-    .then((json) => {
-      const title = json["title"];
-      console.log(title)
-      
-    });
+	function createElement(title, text, image) {
+		const bod = document.getElementById('bod');
+		const Element = document.createElement("div");
+		Element.classList.add("element");
 
-}
+		const titleElement = document.createElement("div");
+		titleElement.classList.add("title");
+		const titlePar = document.createElement("STRONG");
+		const titleP = document.createElement("p");
+		titleP.textContent=title
+		titlePar.addChild(titleP);
+		titleElement.addChild(titlePar);
 
-readJson("public/hello.json");
+		Element.addChild(titleElement);
+		
+		const imageElement = document.createElement("img");
+
+		imageElement.classList.add("imageHolder");
+		imageElement.src = image
+		Element.addChild(imageElement);
+		
+		const textElement = document.createElement("div");
+		textElement.classList.add("text");
+		
+		textElement.textContent=text;
+		Element.addChild(textElement);
+
+		bod.addChild(Element);
+
+		console.log("DONE!");
+	}
+	function readJson(jsonDir) {
+  	fetch(jsonDir)
+    	.then((response) => response.json())
+    	.then((json) => {
+	    	const title = json["title"];
+	    	const text = json["text"];
+	    	const image = json["image"];
+
+				createElement(title, text, image);
+    	});
+
+	}
+	function readDefault(defaulty) {
+		fetch(defaulty)
+    	.then((response) => response.json())
+    	.then((json) => {
+				for (const key in json){
+				  readJson(json[key]);
+				}
+    	});
+
+		
+	}
+
 </script>
