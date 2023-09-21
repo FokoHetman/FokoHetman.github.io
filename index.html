@@ -41,7 +41,7 @@
   height: 700px;
   scroll-snap-align: start;
   scroll-snap-stop: normal;
-  color: black;
+  color: white;
   font-size: 50px;
   display: flex;
   justify-content: center;
@@ -150,7 +150,7 @@
 
   .text {
     top:415px;
-    right: 420px;
+    right: 310px;
     white-space: pre-wrap;
     padding: 12; 
     min-width: 250px;
@@ -163,8 +163,8 @@
   }
 
   .link {
-    top:415px;
-    right: 420px;
+    top:600px;
+    right: 330px;
     white-space: pre-wrap;
     padding: 12; 
     min-width: 250px;
@@ -175,11 +175,20 @@
     item-align: center;
     font-size: 18px;
   }
+  .link:link {
+    color: #b1b5b2;
+  }
+  .link:visited {
+    color: #575757;
+  }
+  .link:hover {
+    color: #dbdbdb;
+  }
 
 	
   .title {
     bottom: 55px;
-    left: 325px;
+    left: 475px;
     position:relative;
     justify-content: center;
     font-size: 64px;
@@ -188,7 +197,7 @@
   .imageHolder {
 
     top: 90px;
-    left: 20px;
+    left: 180px;
     border: 8px solid #949292;
     border-radius:16px;
     display: flex;
@@ -249,7 +258,7 @@
 		
 	        const Greg = document.createElement("a");
 		Greg.href=link;
-		Greg.textContent="there";
+		Greg.textContent="LINK TO THE SITE";
 		linkElement.classList.add("link");
 		textElement.textContent=text;
 		Element.appendChild(textElement);
