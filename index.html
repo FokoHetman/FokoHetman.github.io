@@ -201,24 +201,24 @@
 		const titlePar = document.createElement("STRONG");
 		const titleP = document.createElement("p");
 		titleP.textContent=title
-		titlePar.addChild(titleP);
-		titleElement.addChild(titlePar);
+		titlePar.appendChild(titleP);
+		titleElement.appendChild(titlePar);
 
-		Element.addChild(titleElement);
+		Element.appendChild(titleElement);
 		
 		const imageElement = document.createElement("img");
 
 		imageElement.classList.add("imageHolder");
 		imageElement.src = image
-		Element.addChild(imageElement);
+		Element.appendChild(imageElement);
 		
 		const textElement = document.createElement("div");
 		textElement.classList.add("text");
 		
 		textElement.textContent=text;
-		Element.addChild(textElement);
+		Element.appendChild(textElement);
 
-		bod.addChild(Element);
+		bod.appendChild(Element);
 
 		console.log("DONE!");
 	}
