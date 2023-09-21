@@ -199,7 +199,7 @@
 
 <script>
 
-	function createElement(title, text, image) {
+	function createElement(title, text, image, link) {
 		const bod = document.getElementById('bod');
 		const Element = document.createElement("div");
 		Element.classList.add("element");
@@ -208,8 +208,13 @@
 		titleElement.classList.add("title");
 		const titlePar = document.createElement("STRONG");
 		const titleP = document.createElement("p");
-		titleP.textContent=title
+
+		const Greg = document.createElement("a");
+		Greg.href=link;
+		Greg.textContent="there";
+		titleP.textContent=title;
 		titlePar.appendChild(titleP);
+		titlePar.appendChild(Greg);
 		titleElement.appendChild(titlePar);
 
 		Element.appendChild(titleElement);
@@ -237,8 +242,9 @@
 	    	const title = json["title"];
 	    	const text = json["text"];
 	    	const image = json["image"];
+		const link = json["link"];
 
-				createElement(title, text, image);
+				createElement(title, text, image, link);
     	});
 
 	}
