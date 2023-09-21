@@ -1,5 +1,6 @@
 {
   "title": "Companions",
   "image": "https://cdn.discordapp.com/attachments/1129904457044459590/1129908929485361202/obraz.png",
-  "text": "Companions API, made for Figura mod.\n It's used to create a small buddy\n following you!\n You can find it <a href=\"https://github.com/FokoHetman/Companions\">there</a>."
+  "text": "Companions API, made for Figura mod.\n It's used to create a small buddy\n following you!\n You can find it ",
+  "link": "https://github.com/FokoHetman/Companions"
 }
