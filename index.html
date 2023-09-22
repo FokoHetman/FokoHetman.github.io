@@ -266,12 +266,9 @@
 		linkElement.appendChild(Greg);
 
 		Element.appendChild(linkElement);
+	        bod.appendChild(Element);
 
-		sleep(0.01).then(() => {
-			bod.appendChild(Element);
-
-		        console.log("DONE!");
-		})
+                console.log("DONE!");
 	}
 	function readJson(jsonDir) {
   	fetch(jsonDir)
