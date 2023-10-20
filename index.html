@@ -226,7 +226,7 @@
   <body>
     <div id="up" class="up">
       <STRONG>Alola!</STRONG>
-      <button onclick="darkMode()"> DarkMode</button>
+      <button onclick="darkMode()" id="modebutton">🌙</button>
     </div>
     <div class="container both-scroll both-mandatory padding-50px">
       <div class="wrapper" id="bod">
@@ -318,7 +318,7 @@ function darkMode() {
 		document.getElementById("up").style.backgroundColor="#5c5c5c";
 
 		document.body.style.color = "white";
-		
+		documents.getElementById("modebutton").innerHTML="☀";
 	} else {
 		document.body.style.color = "black";
 		document.body.style.backgroundColor = "white";
@@ -327,6 +327,7 @@ function darkMode() {
     		document.body.style.borderRightColor = "maroon";
     		document.body.style.borderBottomColor = "red";
 		document.getElementById("up").style.backgroundColor="red";
+		documents.getElementById("modebutton").innerHTML="🌙";
 
 	}
 }
