@@ -211,6 +211,10 @@
 
   }
 
+  button {
+    background-color: black;
+  }
+
 
 </style>
 
@@ -306,8 +310,21 @@ function darkMode() {
 	console.log(dark_mode);
 	if (dark_mode) {
 		document.body.style.backgroundColor = "black";
+		
+		document.body.style.borderTopColor: "red";
+    		document.body.style.borderLeftColor: "maroon";
+    		document.body.style.borderRightColor: "maroon";
+    		document.body.style.borderBottomColor: "red";
+
+		
 	} else {
 		document.body.style.backgroundColor = "white";
+		document.body.style.borderTopColor: "#c900b2";
+    		document.body.style.borderLeftColor: "#8f007e";
+    		document.body.style.borderRightColor: "#8f007e";
+    		document.body.style.borderBottomColor: "#c900b2";
+		documents.getElementById("up").backgroundColor="";
+		
 	}
 }
 </script>
