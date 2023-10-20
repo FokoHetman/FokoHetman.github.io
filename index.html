@@ -222,7 +222,7 @@
   <body>
     <div id="up" class="up">
       <STRONG>Alola!</STRONG>
-      <button onclick="darkMode"> DarkMode</button>
+      <button onclick="darkMode()"> DarkMode</button>
     </div>
     <div class="container both-scroll both-mandatory padding-50px">
       <div class="wrapper" id="bod">
@@ -303,7 +303,7 @@ readDefault("public/jsons.json");
 let dark_mode = false;
 function darkMode() {
 	dark_mode = !dark_mode;
-	Console.log(dark_mode);
+	console.log(dark_mode);
 	if (dark_mode) {
 		document.body.style.backgroundColor = "black";
 	} else {
