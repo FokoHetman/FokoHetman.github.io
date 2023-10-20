@@ -311,20 +311,23 @@ function darkMode() {
 	if (dark_mode) {
 		document.body.style.backgroundColor = "black";
 		
-		document.body.style.borderTopColor: "red";
-    		document.body.style.borderLeftColor: "maroon";
-    		document.body.style.borderRightColor: "maroon";
-    		document.body.style.borderBottomColor: "red";
+		document.body.style.borderTopColor= "#c900b2";
+    		document.body.style.borderLeftColor= "#8f007e";
+    		document.body.style.borderRightColor= "#8f007e";
+    		document.body.style.borderBottomColor= "#c900b2";
+		document.getElementById("up").style.backgroundColor="#c900b2";
 
+		document.body.style.color = "white";
 		
 	} else {
+		document.body.style.color = "black";
 		document.body.style.backgroundColor = "white";
-		document.body.style.borderTopColor: "#c900b2";
-    		document.body.style.borderLeftColor: "#8f007e";
-    		document.body.style.borderRightColor: "#8f007e";
-    		document.body.style.borderBottomColor: "#c900b2";
-		documents.getElementById("up").backgroundColor="";
-		
+		document.body.style.borderTopColor = "red";
+    		document.body.style.borderLeftColor = "maroon";
+    		document.body.style.borderRightColor = "maroon";
+    		document.body.style.borderBottomColor = "red";
+		document.getElementById("up").style.backgroundColor="red";
+
 	}
 }
 </script>
